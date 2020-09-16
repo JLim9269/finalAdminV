@@ -1,6 +1,5 @@
 package org.ttcar.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +20,7 @@ public class TicketController {
 	
 	@GetMapping("/list")
 	public void ticketList(TicketVO vo,Model model) {
-		log.info("ticketList: "+vo);
+		log.info("Controller ticketList: "+vo);
 		model.addAttribute("ticketList",service.getTicketList(vo));
 	}
 }

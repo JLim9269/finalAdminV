@@ -2,20 +2,23 @@ package org.ttcar.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.ttcar.domain.TicketVO;
+import org.ttcar.mapper.TicketMapper;
 
-import com.springbook.biz.ticket.TicketService;
-import com.springbook.biz.ticket.TicketVO;
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
 
-@Service("ticketService")
+@Log4j
+@AllArgsConstructor
+@Service
 public class TicketServiceImpl implements TicketService{
 
-	@Autowired
-	private TicketDAOMybatis ticketDAO;
-	
+	private TicketMapper mapper;
+
 	@Override
 	public List<TicketVO> getTicketList(TicketVO vo) {
-		return ticketDAO.getTicketList(vo);
+		log.info("ServiceImpl getTicketList...");
+		return mapper.getTicketList(vo);
 	}
 }
