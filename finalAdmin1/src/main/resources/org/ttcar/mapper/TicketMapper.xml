@@ -7,8 +7,14 @@
   
 	<select id="getTicketList" resultType="org.ttcar.domain.TicketVO">
 		<![CDATA[
-			select * from tickets where tNo>0
+			select * from tickets where tno>0
 		]]>
 	</select>
-  
+
+	<select id="getTicketPage" resultType="org.ttcar.domain.TicketVO">
+		<![CDATA[
+			select * from tickets where tno=#{tno}
+		]]>
+	</select>
+
 </mapper>

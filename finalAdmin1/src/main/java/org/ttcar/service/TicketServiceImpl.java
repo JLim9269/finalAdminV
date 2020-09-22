@@ -21,4 +21,10 @@ public class TicketServiceImpl implements TicketService{
 		log.info("ServiceImpl getTicketList..."); 
 		return mapper.getTicketList(); 
 	}
+
+	@Override
+	public TicketVO getTicketPage(Long tno) {
+		log.info("ServiceImpl getTicketPage..."); 
+		return mapper.getTicketPage(tno);
+	}
 }

@@ -36,37 +36,39 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Ticket Properties</h1>
+          <h1 class="h3 mb-2 text-gray-800">Ticket</h1>
 
 		  <!-- 본문 -->
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-info">
-			<div class="panel-heading">Ticket</div>
+			<div class="panel-heading"> </div>
 			<!--  /.panel-heading -->
 			<div class="panel-body">
 				
 				<div class="form-group">
-					<label>글번호</label>
-					<input class="form-control" name="bno" value='<c:out value="${board. bno }"/>' readonly>
+					<label>Ticket Number</label>
+					<input class="form-control" name="bno" value='<c:out value="${ticketPage.tno}"/>' readonly>
 				</div>
 				
 				<div class="form-group">
-					<label>제목</label>
-					<input class="form-control" name="title" value='<c:out value="${board. title }"/>' readonly>
+					<label>userId</label>
+					<input class="form-control" name="userId" value='<c:out value="${ticketPage.userId}"/>' readonly>
 				</div>
 				
 				<div class="form-group">
-					<label>내용</label>
+					<label>Title</label>
+					<input class="form-control" name="title" value='<c:out value="${ticketPage.title}"/>' readonly>
+				</div>
+				
+				<div class="form-group">
+					<label>Content</label>
 					<textarea class="form-control" rows="3" name="content" readonly>
-					       <c:out value="${board.content }"/>
+					       <c:out value="${ticketPage.content}"/>
 					 </textarea>
 				</div>
 				
-				<div class="form-group">
-					<label>작성자</label>
-					<input class="form-control" name="writer" value='<c:out value="${board.writer }"/>' readonly>
-				</div>
+				
 				
 				<button data-oper='modify' class="btn btn-primary">수정</button>
 				<button data-oper='list' class="btn btn-default">글목록</button>

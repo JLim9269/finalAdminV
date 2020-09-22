@@ -8,4 +8,6 @@ public interface TicketMapper {
 
 	List<TicketVO> getTicketList();
 
+	TicketVO getTicketPage(Long tno);
+
 }

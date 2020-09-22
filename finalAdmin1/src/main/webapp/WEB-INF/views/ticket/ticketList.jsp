@@ -12,6 +12,16 @@
 
   	<!-- Custom styles for this page -->
   	<link href="/resources/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  	
+<style>
+.description {
+    display:none;
+    position:absolute;
+    border:1px solid #000;
+    width:400px;
+    height:400px;
+}
+</style>
 </head>
 <body id="page-top">
 
@@ -71,7 +81,9 @@
                   	<tr>
                       <td>${ticket.tno}</td>
                       <td>${ticket.category}</td>
-                      <td><a class="move" href="${ticket.tno}">${ticket.title}</a></td>
+                      <td><a class="move" href="${ticket.tno}">${ticket.title}
+                      	<iframe class="description"src="/ticket/ticketPage?tno=${ticket.tno}"></iframe></a>
+                      </td>
                       <td>${ticket.userId}</td>
                       <td>${ticket.regDate}</td>
                       <td>
@@ -132,10 +144,30 @@
   <script src="/resources/js/demo/datatables-demo.js"></script>
 
 <script>
+	var f = document.createElement("form");
+	
+	f.setAttribute("id","tListForm");
+	f.setAttribute("method","get");
+	f.setAttribute("action","/ticket/ticketPage");
+	
+	document.getElementsByTagName("body")[0].appendChild(f);
+</script>
+
+<script>
 	$().ready(function(){
+		var tListForm = $("#tListForm");
+		
 		$(".move").on("click",function(e){
 			e.preventDefault();
-			
+			tListForm.append("<input type='hidden' name='tno' value='"+$(this).attr("href")+"'>");	
+			tListForm.submit();
+		});
+		
+		//preview page
+		$(".move").mouseover(function(){
+			$(this).children(".description").show();
+		}).mouseout(function(){
+			$(this).children(".description").hide();
 		});
 	});
 </script>

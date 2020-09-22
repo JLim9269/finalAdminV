@@ -6,6 +6,8 @@ import org.ttcar.domain.TicketVO;
   
 public interface TicketService {
   
-	public List<TicketVO> getTicketList(); 
+	public List<TicketVO> getTicketList();
+
+	public TicketVO getTicketPage(Long tno); 
 	
 }
