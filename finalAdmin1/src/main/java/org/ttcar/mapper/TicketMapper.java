@@ -6,6 +6,6 @@ import org.ttcar.domain.TicketVO;
 
 public interface TicketMapper {
 
-	List<TicketVO> getTicketList(TicketVO vo);
+	List<TicketVO> getTicketList();
 
 }

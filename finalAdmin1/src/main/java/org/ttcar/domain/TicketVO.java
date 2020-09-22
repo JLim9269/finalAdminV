@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class TicketVO {
 
-	private Long tNo;
+	private Long tno;
 	private String category;
 	private String title;
 	private String userId;

@@ -19,8 +19,9 @@ public class TicketController {
 	private TicketService service;
 	
 	@GetMapping("/ticketList")
-	public void ticketList(TicketVO vo,Model model) {
-		log.info("Controller ticketList: "+vo);
-		model.addAttribute("ticketList",service.getTicketList(vo));
+	public void ticketList(Model model) {
+		log.info("Controller ticketList executed");
+		model.addAttribute("ticketList",service.getTicketList());
+		log.info(service.getTicketList()); //it works
 	}
 }

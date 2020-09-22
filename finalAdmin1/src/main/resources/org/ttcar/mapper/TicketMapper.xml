@@ -5,9 +5,9 @@
   
 <mapper namespace="org.ttcar.mapper.TicketMapper">
   
-	<select id="getTicketList">
+	<select id="getTicketList" resultType="org.ttcar.domain.TicketVO">
 		<![CDATA[
-			select
+			select * from tickets where tNo>0
 		]]>
 	</select>
   
