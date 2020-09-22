@@ -13,12 +13,12 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 @Log4j
 @Controller
-@RequestMapping("/tickets")
+@RequestMapping("/ticket")
 public class TicketController {
 
 	private TicketService service;
 	
-	@GetMapping("/list")
+	@GetMapping("/ticketList")
 	public void ticketList(TicketVO vo,Model model) {
 		log.info("Controller ticketList: "+vo);
 		model.addAttribute("ticketList",service.getTicketList(vo));
