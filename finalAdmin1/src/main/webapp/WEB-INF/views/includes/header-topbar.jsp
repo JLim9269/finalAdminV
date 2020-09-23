@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<!DOCTYPE html><html><head><meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+
 <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -227,5 +224,3 @@
     </div>
   </div>
   
-</body>
-</html>

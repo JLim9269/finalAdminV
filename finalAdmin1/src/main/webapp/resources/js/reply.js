@@ -27,6 +27,8 @@ var replyService=(function(){
 		var tno=param.tno;
 		var page=param.page||1;
 		
+		console.log("getList............");
+		
 		$.getJSON("/replies/page/"+tno+"/"+page+".json",
 		   function(data){
 		       if(callback){

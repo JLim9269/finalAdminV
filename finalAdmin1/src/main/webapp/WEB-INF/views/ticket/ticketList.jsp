@@ -1,34 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html><html><head><meta charset="UTF-8">
-<title>Insert title here</title>
-	<!-- Custom fonts for this template -->
-  	<link href="/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  	<!-- Custom styles for this template -->
-  	<link href="/resources/css/sb-admin-2.min.css" rel="stylesheet">	<!-- core css -->
-
-  	<!-- Custom styles for this page -->
-  	<link href="/resources/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">	<!-- database minor css -->
-  	
-<style>
-.description {
-    display:none;
-    position:absolute;
-    border:1px solid #000;
-    width:400px;
-    height:400px;
-    /* scrolling:no;
-    frameborder:0; */
-}
-</style>
-</head>
-<body id="page-top">
-
-  <!-- Page Wrapper -->
-  <div id="wrapper">
 
     <!-- Sidebar -->
 	<%@ include file="../includes/header-sidebar.jsp"%>
@@ -198,39 +171,8 @@
       </div>
       <!-- End of Main Content -->
 
-      <!-- Footer -->
-      <%@ include file="../includes/footer.jsp"%>
-      <!-- End of Footer -->
-
     </div>
     <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="/resources/vendor/jquery/jquery.min.js"></script>	<!-- pagination related -->
-  <script src="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>	<!-- dunno -->
-
-  <!-- Core plugin JavaScript-->
-  <script src="/resources/vendor/jquery-easing/jquery.easing.min.js"></script>	<!-- dunno -->
-
-  <!-- Custom scripts for all pages-->
-  <script src="/resources/js/sb-admin-2.min.js"></script> <!-- dunno -->
-
-  <!-- Page level plugins -->
-  <script src="/resources/vendor/datatables/jquery.dataTables.min.js"></script>	<!-- pagination related -->
-  <script src="/resources/vendor/datatables/dataTables.bootstrap4.min.js"></script>	<!-- pagination css related -->
-
-  <!-- Page level custom scripts -->
-  <!-- <script src="/resources/js/demo/datatables-demo.js"></script> -->	<!-- pagination related -->
-
-
 
 
 
@@ -298,12 +240,7 @@
 
 									searchForm.submit();
 								});
-/* 
-              $('#goodBtn').on("click",function(e){
-            	  var bno = $(this).data("bno");
-                   alert(bno);
-                  });
-                   */			
+			
 					});
 </script>
 
@@ -312,7 +249,7 @@
 
 
 
-<script>
+<script>	/* no longer used */
 	var f = document.createElement("form");
 	
 	f.setAttribute("id","tListForm");
@@ -324,12 +261,13 @@
 
 <script>
 	$().ready(function(){
-		var tListForm = $("#tListForm");
+		var actionForm = $("#actionForm");
 		
 		$(".move").on("click",function(e){
 			e.preventDefault();
-			tListForm.append("<input type='hidden' name='tno' value='"+$(this).attr("href")+"'>");	
-			tListForm.submit();
+			actionForm.append("<input type='hidden' name='tno' value='"+$(this).attr("href")+"'>");	
+			actionForm.attr("action","/ticket/ticketPage");
+			actionForm.submit();
 		});
 		
 		//preview page
@@ -340,7 +278,3 @@
 		});
 	});
 </script>
-
-</body>
-
-</html>

@@ -19,4 +19,6 @@ public class TicketVO {
 	private String content;
 	private MultipartFile uploadFile;
 	private String images;
+	
+	private int replyCnt;
 }

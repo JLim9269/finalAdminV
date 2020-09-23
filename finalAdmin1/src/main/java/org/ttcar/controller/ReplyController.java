@@ -46,21 +46,6 @@ class ReplyController {
     }
     
     //댓글 리스트
-  /*  @GetMapping(value="/page/{bno}/{page}",
-    		              produces= {MediaType.APPLICATION_ATOM_XML_VALUE,
-    		            		             MediaType.APPLICATION_JSON_UTF8_VALUE})
-    public ResponseEntity<List<ReplyVO>> getList(@PathVariable("page") int page,
-    		                                                        @PathVariable("bno") Long bno){
-    	Criteria cri=new Criteria(page,10);
-    	
-    	log.info("get Reply List bno: "+bno);
-    	
-    	log.info("cri:"+cri);
-    	
-    	return new ResponseEntity<>(service.getListWithPaging(cri, bno),
-    			                                          HttpStatus.OK);
-    	
-    } */
     
     @GetMapping(value="/page/{tno}/{page}",
             produces= {MediaType.APPLICATION_ATOM_XML_VALUE,
