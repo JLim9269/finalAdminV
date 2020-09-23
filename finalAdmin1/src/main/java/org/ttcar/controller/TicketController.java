@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.ttcar.domain.Criteria;
+import org.ttcar.domain.PageDTO;
 import org.ttcar.domain.TicketVO;
 import org.ttcar.service.TicketService;
 
@@ -19,11 +21,23 @@ public class TicketController {
 
 	private TicketService service;
 	
+	//@GetMapping("/ticketList")
+	//public void ticketList(Model model) {
+	//	log.info("Controller ticketList executed");
+	//	model.addAttribute("ticketList",service.getTicketList());
+	//	log.info(service.getTicketList()); //it works
+	//}
+	
 	@GetMapping("/ticketList")
-	public void ticketList(Model model) {
+	public void ticketList(Criteria cri,Model model) {
 		log.info("Controller ticketList executed");
-		model.addAttribute("ticketList",service.getTicketList());
-		log.info(service.getTicketList()); //it works
+		model.addAttribute("ticketList",service.getTicketListWithPaging(cri));
+		
+		int total = service.getTotal(cri);//페이지번호, 페이당 건수로 조회
+		log.info("total:"+total);
+		
+		log.info("pageDTO:"+new PageDTO(cri, total));
+		model.addAttribute("pageMaker",new PageDTO(cri, total));
 	}
 	
 	@GetMapping("/ticketPage")

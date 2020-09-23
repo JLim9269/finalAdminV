@@ -26,6 +26,10 @@ uploadFile varchar2(100)
 
 create sequence seq_tickets;
 
+alter table tickets add(replycnt number default 0);
+
+-----------------------------------------------------------------------
+
 drop table tickets;
 
 select * from tickets;
@@ -43,3 +47,19 @@ values(seq_tickets.nextval,'Short-term','I have a problem'||seq_tickets.currval,
 insert into tickets(tNo,category,title,userId,status,content) 
 select seq_tickets.nextval,category,title||seq_tickets.currval,userId||seq_tickets.currval,status,content
 from tickets;
+
+-------------------------------------------------------------------------
+SELECT cols.table_name, cols.column_name, cols.position, cons.status, cons.owner
+FROM all_constraints cons, all_cons_columns cols
+WHERE cols.table_name = 'TICKETS'
+AND cons.constraint_type = 'P'
+AND cons.constraint_name = cols.constraint_name
+AND cons.owner = cols.owner
+ORDER BY cols.table_name, cols.position;
+
+SELECT *
+FROM user_cons_columns
+WHERE table_name = 'TICKETS';
+
+alter table tickets rename constraint SYS_C007044 to pk_tickets;
+
