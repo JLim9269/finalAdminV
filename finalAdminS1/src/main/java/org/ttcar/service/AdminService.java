@@ -1,0 +1,10 @@
+package org.ttcar.service;
+
+import org.ttcar.domain.AdminVO;
+
+public interface AdminService {
+
+	public void register(AdminVO vo);
+
+	public AdminVO getAdmin(AdminVO vo);
+}
