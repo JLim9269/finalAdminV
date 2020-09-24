@@ -51,14 +51,14 @@
                 <i class="fas fa-globe fa-fw"></i>
               </a>
               <!-- Dropdown - Language -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown" id="langSelect">
                 <a class="dropdown-item" href="?lang=ko">
-                  <i class="fas fa-check fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <i class="fas fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <!-- <i class="fas fa-check fa-sm fa-fw mr-2 text-gray-400"></i> -->
                   	한국어
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="?lang=en">
-                  <!-- <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> -->
                   <i class="fas fa-sm fa-fw mr-2 text-gray-400"></i>
                   English
                 </a>
@@ -224,3 +224,39 @@
     </div>
   </div>
   
+
+  
+<script>
+
+	$().ready(function(){
+		 //var lang = '${lang}';
+		 //alert(lang);
+		 
+		$("#langSelect a").on("click",function(e){
+			e.preventDefault();
+			/* $("#langSelect a i").removeClass("fas fa-sm fa-fw mr-2 text-gray-400"); */
+			/* $("#langSelect a i").removeClass("fas fa-check fa-sm fa-fw mr-2 text-gray-400"); */			
+			/* $(this).find("i").addClass("fas fa-check fa-sm fa-fw mr-2 text-gray-400"); */
+			$("#langSelect a i").attr("class","fas fa-sm fa-fw mr-2 text-gray-400");
+			$(this).find("i").attr("class","fas fa-check fa-sm fa-fw mr-2 text-gray-400");
+			//$(this).unbind("click");
+			//location.href="?lang=ko";
+			$(this).attr("class","dropdown-item")
+			$(this).attr("href","?lang=ko");	//prop
+
+			//$(this).trigger("click");
+			//$(this).click();
+			
+			window.location.href = "?lang=ko";
+
+
+			
+			//var href = $(this).attr('href');
+			//alert(href);
+			
+			//e.stopPropagation();
+			//$(this).triggerHandler("click");
+			//e.preventDefault();
+		});
+	});
+</script>
