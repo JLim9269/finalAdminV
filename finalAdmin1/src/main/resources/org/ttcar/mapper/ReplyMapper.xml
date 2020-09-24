@@ -5,7 +5,7 @@
   <mapper namespace="org.ttcar.mapper.ReplyMapper">
   
  <insert id="insert">
-  insert into tbl_reply(rno,tno,reply,replyer)
+  insert into tbl_reply(rno,tno,reply,replyer) 
   values(seq_reply.nextval,#{tno},#{reply},#{replyer})
  </insert>
   

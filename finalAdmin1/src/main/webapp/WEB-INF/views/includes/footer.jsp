@@ -10,11 +10,11 @@
   </a>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="/resources/vendor/jquery/jquery.min.js"></script>	<!-- pagination related -->
+  <!-- <script src="/resources/vendor/jquery/jquery.min.js"></script> -->	<!-- pagination related -->
   <script src="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>	<!-- dunno -->
 
   <!-- Core plugin JavaScript-->
-  <script src="/resources/vendor/jquery-easing/jquery.easing.min.js"></script>	<!-- dunno -->
+  <script src="/resources/vendor/jquery-easing/jquery.easing.min.js"></script>	<!-- dunno hmm... for now comment out -->
 
   <!-- Custom scripts for all pages-->
   <script src="/resources/js/sb-admin-2.min.js"></script> <!-- dunno -->

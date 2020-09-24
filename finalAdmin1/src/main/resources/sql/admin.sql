@@ -20,3 +20,4 @@ password varchar2(20)
 
 select * from admins;
 
+insert into admins(firstName,lastName,email,password) values();

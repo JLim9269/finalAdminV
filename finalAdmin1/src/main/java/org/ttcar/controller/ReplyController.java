@@ -33,7 +33,7 @@ class ReplyController {
     @PostMapping(value="/new", consumes = "application/json"
     		                ,produces = {MediaType.TEXT_PLAIN_VALUE})
     public ResponseEntity<String> create(@RequestBody ReplyVO vo){
-    	log.info("ReplyVO: "+vo);
+    	log.info("create ReplyVO: "+vo);
     	//댓글 등록 처리
     	int insertCount = service.insert(vo);
     	

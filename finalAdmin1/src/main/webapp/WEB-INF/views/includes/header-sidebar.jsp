@@ -117,7 +117,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Login Screens:</h6>
             <a class="collapse-item" href="login.jsp">Login</a>
-            <a class="collapse-item" href="register.jsp">Register</a>
+            <a class="collapse-item" href="/ttcar/register">Register</a>
             <a class="collapse-item" href="forgot-password.jsp">Forgot Password</a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Other Pages:</h6>
